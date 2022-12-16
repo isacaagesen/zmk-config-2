@@ -217,11 +217,11 @@ ZMK_BEHAVIOR(swap, tri_state,
 /* Keymap */
 ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &caps_word       &kp Q         &kp W        &kp F          &kp P         &kp B            &kp J          &kp L         &kp U        &kp Y         &kp SQT    &swe_one_morph 
+          &caps_word       &kp Q         &kp W        &kp F          &kp P         &kp B            &kp J          &kp L         &kp U        &kp Y         &kp SQT        XXX 
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            &kp Q       &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T     &kp G            &kp M       &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O      &kp Q
+            &kp Q       &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T     &kp G            &kp M       &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O      XXX
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            &kp Q          &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H      &comma_morph   &dot_morph   &key_repeat      &kp Q
+            &kp Q          &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H      &comma_morph   &dot_morph   &key_repeat      XXX
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                     &bs_del_sys   &bs_del_sys   &lt_spc NAV 0       &ss_cw       NUM_WORD       XTR_RH
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
