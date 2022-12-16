@@ -216,8 +216,16 @@ ZMK_BEHAVIOR(swap, tri_state,
 
 /* Keymap */
 ZMK_LAYER(default_layer,
-&caps_word        &kp Q            &kp W           &kp F            &kp P            &kp B                    &kp J            &kp L            &kp U            &kp Y            &kp SQT         XXX 
-&key_repeat    &hml LGUI, A    &hml LALT, R     &hml LCTRL, S     &hml LSHFT, T      &kp G                    &kp M        &hmr LSHFT N      &hmr LCTRL E      &hmr LALT I       &hmr LGUI O      XXX
-&kt LALT          &kp Z            &kp X           &kp C            &kp D            &kp V                    &kp K            &kp H            &kp COMMA        &kp DOT         &kp SLASH        XXX)
+     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+          &kp Q         &kp W         &kp F         &kp P         &kp B             XTR_MT            &kp J         &kp L         &kp U         &kp Y         &kp SQT
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T  &kp G             XTR_MM            &kp M         &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          &kp Z         &kp X         &kp C         &kp D         &kp V             XTR_MB            &kp K         &kp H         &comma_morph  &dot_morph    &key_repeat
+     // ├─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┼─────────────┤
+          XTR_LH                                    &bs_del_sys   &lt_spc NAV 0     XTR_MH            &ss_cw        NUM_WORD                                  XTR_RH
+     // ╰─────────────╯                           ╰─────────────┴─────────────╯   ╰─────────────╯   ╰─────────────┴─────────────╯                           ╰─────────────╯
+)
+
 
 /* vim: set tw=180: */
