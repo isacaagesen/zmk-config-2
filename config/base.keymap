@@ -138,8 +138,8 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
 )
 
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: num layer
-ZMK_BEHAVIOR(bs_del_sys, mod_morph,
-    bindings = <&lt SYS BSPC>, <&kp DEL>;
+ZMK_BEHAVIOR(bs_del_num, mod_morph,
+    bindings = <&lt NUM BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <MOD_LSFT>;  // requires PR #1412
 )
@@ -219,23 +219,23 @@ ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &caps_word       &kp Q         &kp W        &kp F          &kp P         &kp B            &kp J          &kp L         &kp U        &kp Y         &kp SQT        XXX 
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            &kp Q       &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T     &kp G            &kp M       &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O      XXX
+           NUM_WORD     &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T     &kp G            &kp M       &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O      XXX
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            &kp Q          &kp Z         &kp X         &kp C         &kp D         &kp V            &kp K         &kp H      &comma_morph   &dot_morph   &key_repeat      XXX
+          &key_repeat      &kp Z         &kp X         &kp C         &kp D         &kp V            &kp K         &kp H      &comma_morph   &dot_morph     &kp SLASH    XXX
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                      &kp ESC    &lt_spc NAV 0     &ss_cw          NUM_WORD     &bs_del_sys    ___
+                                                      &kp ESC    &lt_spc NAV 0     &ss_cw        &lt SYS ENTER  &bs_del_num      ___
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
 ZMK_LAYER(nav_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             ___            ___           ___       &kp LS(TAB)      &swap        ___            &kp PG_DN    &kp PG_UP      NAV_BSPC         NAV_DEL         ___     ___
+             ___            ___           ___       &kp LS(TAB)      &swap        ___              &kp PG_DN      &kp PG_UP     NAV_BSPC      NAV_DEL         ___          ___
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             ___         &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT      ___             &kp LEFT      &kp DOWN       &kp UP   &kp RIGHT     &kp RET                 ___ 
+             ___         &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT      ___              &kp LEFT       &kp DOWN      &kp UP        &kp RIGHT     &kp RET        ___ 
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             ___            ___           ___           ___           ___         ___              ___         &kp INS       &kp TAB      &copy_cut     &kp LS(INS)     ___
+             ___            ___           ___           ___           ___         ___                &kp INS      &kp TAB      &copy_cut    &kp LS(INS)       ___          ___       
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                       ___      ___          ___                ___         CANCEL        ___
+                                                        ___           ___         ___                 ___         CANCEL         ___
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 
 )
