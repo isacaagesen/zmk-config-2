@@ -3,90 +3,94 @@
 #define U_TAP_MS 0
 #define U_WAIT_MS 1
 
-  sv_ao: sv_ao {
-      compatible = "zmk,behavior-macro";
-      label = "sv one";
-      #binding-cells = <0>;
-      wait-ms = <U_WAIT_MS>;
-      tap-ms = <U_TAP_MS>;
-      bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N9>
-        , <&macro_release &kp LALT>;
+/ {
+	behaviors {
+    sv_ao: sv_ao {
+        compatible = "zmk,behavior-macro";
+        label = "sv one";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N9>
+          , <&macro_release &kp LALT>;
+    };
+    sv_ao_shift: sv_ao_shift {
+        compatible = "zmk,behavior-macro";
+        label = "sv one shift";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N7>
+          , <&macro_release &kp LALT>;
+    };
+    sv_ae: sv_ae {
+        compatible = "zmk,behavior-macro";
+        label = "sv two";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N8>
+          , <&macro_release &kp LALT>;
+    };
+    sv_ae_shift: sv_ae_shift {
+        compatible = "zmk,behavior-macro";
+        label = "sv two shift";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N6>
+          , <&macro_release &kp LALT>;
+    };
+    sv_oe: sv_ae {
+        compatible = "zmk,behavior-macro";
+        label = "sv three";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N6>
+          , <&macro_release &kp LALT>;
+    };
+    sv_oe_shift: sv_ae_shift {
+        compatible = "zmk,behavior-macro";
+        label = "sv three shift";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N4>
+          , <&macro_release &kp LALT>;
+    };
+    sv_ao_morph: sv_ao_morph {
+        compatible = "zmk,behavior-mod-morph";
+        label = "sv one morph";
+        #binding-cells = <0>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&sv_ao>, <&sv_ao_shift>;
+    };
+    sv_ae_morph: sv_ae_morph {
+        compatible = "zmk,behavior-mod-morph";
+        label = "sv two morph";
+        #binding-cells = <0>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&sv_ae>, <&sv_ae_shift>;
+    };
+    sv_oe_morph: sv_ae_morph {
+        compatible = "zmk,behavior-mod-morph";
+        label = "sv three morph";
+        #binding-cells = <0>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&sv_oe>, <&sv_ae_shift>;
+    };
   };
-  sv_ao_shift: sv_ao_shift {
-      compatible = "zmk,behavior-macro";
-      label = "sv one shift";
-      #binding-cells = <0>;
-      wait-ms = <U_WAIT_MS>;
-      tap-ms = <U_TAP_MS>;
-      bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N7>
-        , <&macro_release &kp LALT>;
-  };
-  sv_ae: sv_ae {
-      compatible = "zmk,behavior-macro";
-      label = "sv two";
-      #binding-cells = <0>;
-      wait-ms = <U_WAIT_MS>;
-      tap-ms = <U_TAP_MS>;
-      bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N8>
-        , <&macro_release &kp LALT>;
-  };
-  sv_ae_shift: sv_ae_shift {
-      compatible = "zmk,behavior-macro";
-      label = "sv two shift";
-      #binding-cells = <0>;
-      wait-ms = <U_WAIT_MS>;
-      tap-ms = <U_TAP_MS>;
-      bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N6>
-        , <&macro_release &kp LALT>;
-  };
-  sv_oe: sv_ae {
-      compatible = "zmk,behavior-macro";
-      label = "sv three";
-      #binding-cells = <0>;
-      wait-ms = <U_WAIT_MS>;
-      tap-ms = <U_TAP_MS>;
-      bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N6>
-        , <&macro_release &kp LALT>;
-  };
-  sv_oe_shift: sv_ae_shift {
-      compatible = "zmk,behavior-macro";
-      label = "sv three shift";
-      #binding-cells = <0>;
-      wait-ms = <U_WAIT_MS>;
-      tap-ms = <U_TAP_MS>;
-      bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N4>
-        , <&macro_release &kp LALT>;
-  };
-  sv_ao_morph: sv_ao_morph {
-      compatible = "zmk,behavior-mod-morph";
-      label = "sv one morph";
-      #binding-cells = <0>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-      bindings = <&sv_ao>, <&sv_ao_shift>;
-  };
-  sv_ae_morph: sv_ae_morph {
-      compatible = "zmk,behavior-mod-morph";
-      label = "sv two morph";
-      #binding-cells = <0>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-      bindings = <&sv_ae>, <&sv_ae_shift>;
-  };
-  sv_oe_morph: sv_ae_morph {
-      compatible = "zmk,behavior-mod-morph";
-      label = "sv three morph";
-      #binding-cells = <0>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-      bindings = <&sv_oe>, <&sv_ae_shift>;
-  };
+};
