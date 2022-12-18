@@ -149,6 +149,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
     tap-ms = <5>;
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
+
 ZMK_BEHAVIOR(spc_morph, mod_morph,
     bindings = <&kp SPACE>, <&dot_spc>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -213,7 +214,6 @@ ZMK_BEHAVIOR(swap, tri_state,
     ignored-key-positions = <LT2>;
 )
 
-
 /* Keymap */
 ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
@@ -221,9 +221,9 @@ ZMK_LAYER(default_layer,
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
            NUM_WORD     &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T     &kp G            &kp M       &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O       XXX
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &key_repeat      &kp Z         &kp X         &kp C         &kp D         &kp V            &kp K         &kp H      &comma_morph   &dot_morph     &kp SLASH        XXX
+          &key_repeat      &kp Z         &kp X         &kp C         &kp D         &kp V            &kp K         &kp H       &comma_morph   &dot_morph    &kp SLASH        XXX
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                    &lt SYS ESC  &lt_spc NAV 0     &ss_cw        &lt SYM ENTER  &bs_del_num   &sl UC  
+                                                    &lt SYS ESC  &lt NAV ENTER     &ss_cw        &lt_spc SYM 0  &bs_del_num     &sl UC  
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
