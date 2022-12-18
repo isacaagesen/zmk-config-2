@@ -49,7 +49,7 @@
           , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N6>
           , <&macro_release &kp LALT>;
     };
-    sv_oe: sv_ae {
+    sv_oe: sv_oe {
         compatible = "zmk,behavior-macro";
         label = "sv three";
         #binding-cells = <0>;
@@ -60,7 +60,7 @@
           , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N6>
           , <&macro_release &kp LALT>;
     };
-    sv_oe_shift: sv_ae_shift {
+    sv_oe_shift: sv_oe_shift {
         compatible = "zmk,behavior-macro";
         label = "sv three shift";
         #binding-cells = <0>;
@@ -73,24 +73,24 @@
     };
     sv_ao_morph: sv_ao_morph {
         compatible = "zmk,behavior-mod-morph";
-        label = "sv one morph";
+        label = "sv ao morph";
         #binding-cells = <0>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
         bindings = <&sv_ao>, <&sv_ao_shift>;
     };
     sv_ae_morph: sv_ae_morph {
         compatible = "zmk,behavior-mod-morph";
-        label = "sv two morph";
+        label = "sv ae morph";
         #binding-cells = <0>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
         bindings = <&sv_ae>, <&sv_ae_shift>;
     };
-    sv_oe_morph: sv_ae_morph {
+    sv_oe_morph: sv_oe_morph {
         compatible = "zmk,behavior-mod-morph";
-        label = "sv three morph";
+        label = "sv oe morph";
         #binding-cells = <0>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
-        bindings = <&sv_oe>, <&sv_ae_shift>;
+        bindings = <&sv_oe>, <&sv_oe_shift>;
     };
   };
 };
