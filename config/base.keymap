@@ -24,7 +24,7 @@
 
 #include "combos.dtsi"  // must be sourced after layer-shortcuts
 #include "mouse.dtsi"
-#include "xtr_defaults.h"
+#include "extra_keys.h"
 // ZMK_CONDITIONAL_LAYER(SYS NUM, FN)  // SYS + NUM --> FN
 
 /* Navigation keys and misc shortcuts */
