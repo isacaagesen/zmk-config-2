@@ -51,6 +51,12 @@
 #define DSK_PREV    &kp LG(LC(LEFT))   // previous desktop
 #define DSK_NEXT    &kp LG(LC(RIGHT))  // next     desktop
 
+#define SPLIT_DOWN  &kp LS(LA((PLUS)))
+#define SPLIT_RIGHT &kp LS(LA((MINUS)))
+#define WIN_LEFT    &kp LG(LC(LA(LEFT)))
+#define FONT_PLUS   &kp LC(KP_PLUS)
+#define FONT_MINUS  &kp LC(MINUS)
+
 /* Settings */
 
 #define QUICK_TAP_MS 175
@@ -232,11 +238,11 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(nav_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-              ___           ___  &kp LG(LC(LA(LEFT)))  &swap      &kp LC(TAB)  &kp LC(LS(TAB))     &kp PG_DN    &kp PG_UP     NAV_BSPC       NAV_DEL          ___           ___
+              ___           ___         WIN_LEFT       &swap      &kp LC(TAB)  &kp LC(LS(TAB))     &kp PG_DN      &kp PG_UP    NAV_BSPC       NAV_DEL         ___           ___
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-              ___         &sk LGUI      &sk LALT    &sk LCTRL     &sk LSHFT    &kp LC(KP_PLUS)     &kp LEFT       &kp DOWN      &kp UP       &kp RIGHT        ___           ___ 
+              ___         &sk LGUI      &sk LALT    &sk LCTRL     &sk LSHFT      FONT_PLUS         &kp LEFT       &kp DOWN      &kp UP       &kp RIGHT        ___           ___ 
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-              ___           ___           ___   &kp LS(LA((PLUS))) &kp LS(LA((MINUS))) &kp LC(MINUS)  ___        &kp TAB       &copy_cut     &kp END        &kp INS         ___       
+              ___           ___           ___        SPLIT_DOWN   SPLIT_RIGHT    FONT_MINUS           ___         &kp TAB       &copy_cut    &kp END        &kp INS         ___       
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                         ___           ___           ___               ___         CANCEL          ___
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
