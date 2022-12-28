@@ -56,6 +56,7 @@
 #define WIN_LEFT    &kp LG(LC(LA(LEFT)))
 #define FONT_PLUS   &kp LC(KP_PLUS)
 #define FONT_MINUS  &kp LC(MINUS)
+#define WIN_CLOSE   &kp LC(F4)
 
 /* Settings */
 
@@ -238,7 +239,7 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(nav_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-              ___           ___         WIN_LEFT       &swap      &kp LC(TAB)  &kp LC(LS(TAB))     &kp PG_DN      &kp PG_UP    NAV_BSPC       NAV_DEL         ___           ___
+              ___         WIN_CLOSE     WIN_LEFT       &swap      &kp LC(TAB)  &kp LC(LS(TAB))     &kp PG_DN      &kp PG_UP    NAV_BSPC       NAV_DEL         ___           ___
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
               ___         &sk LGUI      &sk LALT    &sk LCTRL     &sk LSHFT      FONT_PLUS         &kp LEFT       &kp DOWN      &kp UP       &kp RIGHT        ___           ___ 
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
