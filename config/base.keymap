@@ -67,10 +67,6 @@ ZMK_CONDITIONAL_LAYER(SYS NAV, MOUSE)  // SYS + NAV --> MOUSE
     release-after-ms = <600>;  // release after 0.6s
     // quick-release;             // no double capitalization when rolling keys
 };
-&skq {  // sticky-key config
-    release-after-ms = <600>;  // release after 0.6s
-    quick-release;             // no double capitalization when rolling keys
-};
 &sl {  // sticky-layer config
     ignore-modifiers;
 };
@@ -142,6 +138,14 @@ ZMK_BEHAVIOR(scroll_mode, tri_state,
 //     tapping-term-ms = <200>;
 //     bindings = <&sk LSHFT>, <&caps_word>, <CANCEL>;
 // )
+
+ZMK_BEHAVIOR(skq, sticky_key,
+    #binding-cells = <1>;
+    bindings = <&kp>;
+    release-after-ms = <1000>;
+    quick-release;
+)
+
 // tap: sticky-shift | lshft + tap: caps-word | hold: shift
 ZMK_BEHAVIOR(ss_cw, mod_morph,
     bindings = <&skq LSHFT>, <&caps_word>;
