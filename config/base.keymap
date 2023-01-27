@@ -140,7 +140,6 @@ ZMK_BEHAVIOR(scroll_mode, tri_state,
 // )
 
 ZMK_BEHAVIOR(skq, sticky_key,
-    #binding-cells = <1>;
     bindings = <&kp>;
     release-after-ms = <1000>;
     quick-release;
