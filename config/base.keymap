@@ -13,8 +13,8 @@
 
 #include "../zmk-nodefree-config/helper.h"
 // #include "../zmk-nodefree-config/international_chars/swedish.dtsi"
-#include "../config/sv.dtsi"
-// #include "../config/sv_osx.dtsi"
+// #include "../config/sv.dtsi"
+#include "../config/sv_osx.dtsi"
 
 #define DEF 0
 #define NAV 1
