@@ -36,8 +36,8 @@
         bindings
           = <&macro_press   &kp LALT>
           , <&macro_tap     &kp U>
-          , <&macro_tap     &kp A>
-          , <&macro_release &kp LALT>;
+          , <&macro_release &kp LALT>
+          , <&macro_tap     &kp A>;
     };
     sv_ae_shift: sv_ae_shift {
         compatible = "zmk,behavior-macro";
@@ -48,8 +48,9 @@
         bindings
           = <&macro_press   &kp LALT &kp LSHFT>
           , <&macro_tap     &kp U>
+          , <&macro_release &kp LALT>
           , <&macro_tap     &kp A>
-          , <&macro_release &kp LALT &kp LSHFT>;
+          , <&macro_release &kp LSHFT>;
     };
     sv_oe: sv_oe {
         compatible = "zmk,behavior-macro";
@@ -60,8 +61,8 @@
         bindings
           = <&macro_press   &kp LALT>
           , <&macro_tap     &kp U>
-          , <&macro_tap     &kp O>
-          , <&macro_release &kp LALT>;
+          , <&macro_release &kp LALT>
+          , <&macro_tap     &kp O>;
     };
     sv_oe_shift: sv_oe_shift {
         compatible = "zmk,behavior-macro";
@@ -72,8 +73,9 @@
         bindings
           = <&macro_press   &kp LALT &kp LSHFT>
           , <&macro_tap     &kp U>
+          , <&macro_release &kp LALT>
           , <&macro_tap     &kp O>
-          , <&macro_release &kp LALT &kp LSHFT>;
+          , <&macro_release &kp LSHFT>;
     };
     sv_ao_morph: sv_ao_morph {
         compatible = "zmk,behavior-mod-morph";
