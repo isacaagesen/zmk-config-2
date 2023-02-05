@@ -23,9 +23,9 @@
         wait-ms = <U_WAIT_MS>;
         tap-ms = <U_TAP_MS>;
         bindings
-          = <&macro_press   &kp LALT>
+          = <&macro_press   &kp LALT &kp LSHFT>
           , <&macro_tap     &kp A>
-          , <&macro_release &kp LALT>;
+          , <&macro_release &kp LALT &kp LSHFT>;
     };
     sv_ae: sv_ae {
         compatible = "zmk,behavior-macro";
@@ -35,7 +35,8 @@
         tap-ms = <U_TAP_MS>;
         bindings
           = <&macro_press   &kp LALT>
-          , <&macro_tap     &kp U &kp A>
+          , <&macro_tap     &kp U>
+          , <&macro_tap     &kp A>
           , <&macro_release &kp LALT>;
     };
     sv_ae_shift: sv_ae_shift {
@@ -45,9 +46,10 @@
         wait-ms = <U_WAIT_MS>;
         tap-ms = <U_TAP_MS>;
         bindings
-          = <&macro_press   &kp LALT>
-          , <&macro_tap     &kp U &kp A>
-          , <&macro_release &kp LALT>;
+          = <&macro_press   &kp LALT &kp LSHFT>
+          , <&macro_tap     &kp U>
+          , <&macro_tap     &kp A>
+          , <&macro_release &kp LALT &kp LSHFT>;
     };
     sv_oe: sv_oe {
         compatible = "zmk,behavior-macro";
@@ -57,7 +59,8 @@
         tap-ms = <U_TAP_MS>;
         bindings
           = <&macro_press   &kp LALT>
-          , <&macro_tap     &kp U &kp O>
+          , <&macro_tap     &kp U>
+          , <&macro_tap     &kp O>
           , <&macro_release &kp LALT>;
     };
     sv_oe_shift: sv_oe_shift {
@@ -67,9 +70,10 @@
         wait-ms = <U_WAIT_MS>;
         tap-ms = <U_TAP_MS>;
         bindings
-          = <&macro_press   &kp LALT>
-          , <&macro_tap     &kp U &kp O>
-          , <&macro_release &kp LALT>;
+          = <&macro_press   &kp LALT &kp LSHFT>
+          , <&macro_tap     &kp U>
+          , <&macro_tap     &kp O>
+          , <&macro_release &kp LALT &kp LSHFT>;
     };
     sv_ao_morph: sv_ao_morph {
         compatible = "zmk,behavior-mod-morph";
