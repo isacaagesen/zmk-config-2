@@ -1,7 +1,7 @@
 #include <dt-bindings/zmk/keys.h>
 
-#define U_TAP_MS 0
-#define U_WAIT_MS 1
+#define U_TAP_MS 10
+#define U_WAIT_MS 10
 
 / {
 	behaviors {
@@ -50,6 +50,7 @@
           , <&macro_tap     &kp U>
           , <&macro_release &kp LALT>
           , <&macro_press   &kp LSHFT>
+
           , <&macro_tap     &kp A>
           , <&macro_release &kp LSHFT>;
     };
