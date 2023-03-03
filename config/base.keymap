@@ -26,7 +26,7 @@
 #define MWH 7
 #define MOUSE 8
 
-// #include "combos.dtsi"  // must be sourced after layer-shortcuts
+#include "combos.dtsi"  // must be sourced after layer-shortcuts
 #include "mouse.dtsi"
 #include "extra_keys.h"
 ZMK_CONDITIONAL_LAYER(SYS NAV, MOUSE)  // SYS + NAV --> MOUSE
