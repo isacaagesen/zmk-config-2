@@ -227,6 +227,12 @@ ZMK_BEHAVIOR(dot_morph, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
+// tap: qmark | shift + tap: excl
+ZMK_BEHAVIOR(qexcl, mod_morph,
+    bindings = <&kp QMARK>, <&kp EXCL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
 // Swapper, requires PR #1366
 ZMK_BEHAVIOR(swap, tri_state,
     bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
@@ -240,7 +246,7 @@ ZMK_LAYER(base,
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
             ___         &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T     &kp G            &kp M       &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O     &sl MWH
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            ___            &kp Z         &kp X         &kp C         &kp D         &kp V            &kp K         &kp H       &comma_morph   &dot_morph    &kp SLASH    &key_repeat
+            ___            &kp Z         &kp X         &kp C         &kp D         &kp V            &kp K         &kp H       &comma_morph   &dot_morph     &qexcl      &key_repeat
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                     &lt SYS ESC  &lt_spc NAV 0     &ss_cw        &lt UC ENTER  &bs_del_sym     NUM_WORD
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
