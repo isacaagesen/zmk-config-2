@@ -28,7 +28,7 @@
 
 /* Brackets (horizontal right hand) */
 ZMK_COMBO(lbrc,  &kp LBRC,      LT2 LT3,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(lpar,  &kp LPAR,      LM2 LM3,     DEF NAV NUM, COMBO_TERM_TURBO)
+ZMK_COMBO(lpar,  &kp LPAR,      LM2 LM3,     DEF NAV NUM, COMBO_TERM_FAST)
 ZMK_COMBO(lbrk,  &kp LBKT,      LB2 LB3,     DEF NAV NUM, COMBO_TERM_FAST)
 ZMK_COMBO(rbrc,  &kp RBRC,      LT1 LT2,     DEF NAV NUM, COMBO_TERM_FAST)
 ZMK_COMBO(rpar,  &kp RPAR,      LM1 LM2,     DEF NAV NUM, COMBO_TERM_TURBO)
