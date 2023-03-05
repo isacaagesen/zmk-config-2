@@ -20,7 +20,7 @@
 #define NAV 1
 #define SYS 2
 #define NUM 3
-// #define SYM 4
+#define SYM 4
 #define FN 5
 #define UC 6
 #define MWH 7
@@ -155,7 +155,6 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
 
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_lctrl, mod_morph,
-    // bindings = <&lt SYM BSPC>, <&kp DEL>;
     bindings = <&kp LCTRL BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <MOD_LSFT>;  // requires PR #1412
