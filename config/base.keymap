@@ -160,12 +160,12 @@ ZMK_BEHAVIOR(bs_del, mod_morph,
     keep-mods = <MOD_LSFT>;  // requires PR #1412
 )
 
-ZMK_BEHAVIOR(mt_del, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mt>, <&bs_del>;
-)
+// ZMK_BEHAVIOR(mt_del, hold_tap,
+//     flavor = "balanced";
+//     tapping-term-ms = <200>;
+//     quick-tap-ms = <QUICK_TAP_MS>;
+//     bindings = <&mt>, <&bs_del>;
+// )
 
 // tap: space | space + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(dot_spc, macro,
@@ -255,7 +255,7 @@ ZMK_LAYER(base,
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
             ___            &kp Z         &kp X         &kp C         &kp D         &kp V            &kp K         &kp H       &comma_morph   &dot_morph     &qexcl      &key_repeat
      // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                    &lt SYS ESC  &lt_spc NAV 0     &ss_cw        &lt UC ENTER  &mt_del LCTRL 0  NUM_WORD
+                                                    &lt SYS ESC  &lt_spc NAV 0     &ss_cw        &lt UC ENTER  &mt LCTRL bs_del  NUM_WORD
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
