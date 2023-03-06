@@ -232,8 +232,9 @@ ZMK_BEHAVIOR(swap, tri_state,
 
 // mouse layer that deactivates automatically on all other keys, requires PR #1366
 ZMK_BEHAVIOR(smart_mouse, tri_state,
-    bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    bindings = <&tog MOUSE>, <&kp Y>, <&tog MOUSE>;
     ignored-key-positions = <RT1 RT2 RM0 RM1 RM2 RM3 RH1 RH2>;  // mouse keys
+    ignored-layers = <MOUSE>;
 )
 
 /* Keymap */
