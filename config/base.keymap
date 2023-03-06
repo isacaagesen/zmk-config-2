@@ -20,11 +20,10 @@
 #define NAV 1
 #define SYS 2
 #define NUM 3
-// #define SYM 4
-#define FN 5
-#define UC 6
-#define MWH 7
-#define MOUSE 8
+#define FN 4
+#define UC 5
+#define MWH 6
+#define MOUSE 7
 
 #include "combos.dtsi"  // must be sourced after layer-shortcuts
 #include "mouse.dtsi"
@@ -237,6 +236,13 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
 ZMK_BEHAVIOR(swap, tri_state,
     bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
     ignored-key-positions = <LT2>;
+)
+
+// mouse layer that deactivates automatically on all other keys, requires PR #1366
+ZMK_BEHAVIOR(smart_mouse, tri_state,
+    bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    ignored-key-positions = <RT1 RT2 RT3 RM1 RM2 RM3 RH0 RH1>;  // mouse keys
+    ignored-layers = <MOUSE>;
 )
 
 /* Keymap */
