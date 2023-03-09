@@ -14,6 +14,7 @@
 #define COMBO_TERM_TURBO 15
 #define COMBO_TERM_FAST 20
 #define COMBO_TERM_SLOW 35
+#define COMBO_TERM_SLOWER 40
 
 /* Punctuation (horizontal left hand) */
 /* ZMK_COMBO(esc,   &kp ESC,       LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST) */
@@ -32,14 +33,14 @@ ZMK_COMBO(lpar,  &kp LPAR,      LM2 LM3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(lbrk,  &kp LBKT,      LB2 LB3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(rbrc,  &kp RBRC,      LT1 LT2,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(rpar,  &kp RPAR,      LM1 LM2,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(rbrk,  &kp RBKT,      LB1 LB2,     DEF, COMBO_TERM_SLOW)
+ZMK_COMBO(rbrk,  &kp RBKT,      LB1 LB2,     DEF, COMBO_TERM_SLOWER)
 
 ZMK_COMBO(lt,    &kp LT,        RT1 RT2,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(minus, &kp MINUS,     RM1 RM2,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(equal, &kp EQUAL,     RB1 RB2,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(gt,    &kp GT,        RT2 RT3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(under, &kp UNDER,     RM2 RM3,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(amps,  &kp AMPS,      RB2 RB3,     DEF, COMBO_TERM_FAST)
+ZMK_COMBO(amps,  &kp AMPS,      RB2 RB3,     DEF, COMBO_TERM_SLOW)
 
 ZMK_COMBO(star,  &kp STAR,      RT1 RT3,     DEF, COMBO_TERM_SLOW)
 ZMK_COMBO(dllr,  &kp DLLR,      RM1 RM3,     DEF, COMBO_TERM_SLOW)
