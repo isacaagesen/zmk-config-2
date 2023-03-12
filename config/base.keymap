@@ -52,10 +52,10 @@
 
 #define SPLIT_DOWN  &kp LS(LA((PLUS)))
 #define SPLIT_RIGHT &kp LS(LA((MINUS)))
-#define WIN_LEFT    &kp LG(LC(LA(LEFT)))
+// #define WIN_LEFT    &kp LG(LC(LA(LEFT)))
 #define FONT_PLUS   &kp LC(KP_PLUS)
 #define FONT_MINUS  &kp LC(MINUS)
-// #define WIN_CLOSE   &kp LA(F4)
+#define WIN_CLOSE   &kp LA(F4)
 
 // Window management
 #define WIN_LEFT   &kp LC(LA(LEFT))
