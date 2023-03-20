@@ -10,8 +10,8 @@
 
 #include "../zmk-nodefree-config/helper.h"
 // #include "../zmk-nodefree-config/international_chars/swedish.dtsi"
-// #include "../config/sv.dtsi"
-#include "../config/sv_osx.dtsi"
+#include "../config/sv.dtsi"
+// #include "../config/sv_osx.dtsi"
 
 #define DEF 0
 #define NAV 1
@@ -233,7 +233,7 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
 
 // Alt+Tab swapper, requires PR #1366
 ZMK_BEHAVIOR(swap, tri_state,
-    bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+    bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
     ignored-key-positions = <LT2>;
 )
 
