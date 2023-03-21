@@ -19,8 +19,12 @@
 // make homerow combos tap-only (so mods can be chorded correctly)
 #define HRC_LPAR   &hmr        LA(LCTRL) LPAR
 #define HRC_RPAR   &hmr        LS(LCTRL) RPAR
-#define HRC_MINUS  &hmr        RS(LCTRL) LPAR
-#define HRC_UNDER  &hmr        LA(LCTRL) RPAR
+
+#define HRC_MINUS  &hmr        RS(LCTRL) MINUS
+#define HRC_UNDER  &hmr        LA(LCTRL) UNDER
+
+#define HRC_DLLR   &hmr        LA(LCTRL) DLLR
+#define HRC_CARET  &hmr        LA(LCTRL) CARET
 
 
 /* Punctuation (horizontal left hand) */
@@ -48,11 +52,11 @@ ZMK_COMBO(under, HRC_UNDER,     RM2 RM3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(amps,  &kp AMPS,      RB2 RB3,     DEF, COMBO_TERM_SLOW)
 
 ZMK_COMBO(star,  &kp STAR,      RT1 RT3,     DEF, COMBO_TERM_SLOW)
-ZMK_COMBO(dllr,  &kp DLLR,      RM1 RM3,     DEF, COMBO_TERM_SLOW)
+ZMK_COMBO(dllr,  HRC_DLLR,      RM1 RM3,     DEF, COMBO_TERM_SLOW)
 ZMK_COMBO(fslh,  &kp FSLH,      RB1 RB3,     DEF, COMBO_TERM_SLOWER)
 
 ZMK_COMBO(prcnt, &kp PRCNT,     LT1 LT3,     DEF, COMBO_TERM_SLOW)
-ZMK_COMBO(caret, &kp CARET,     LM1 LM3,     DEF, COMBO_TERM_SLOW)
+ZMK_COMBO(caret, HRC_CARET,     LM1 LM3,     DEF, COMBO_TERM_SLOW)
 ZMK_COMBO(bslh,  &kp BSLH,      LB1 LB3,     DEF, COMBO_TERM_SLOWER)
 
 ZMK_COMBO(tilde, &kp TILDE,     RT0 RT1,     DEF, COMBO_TERM_SLOW)
