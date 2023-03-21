@@ -9,12 +9,19 @@
 
 // use global-quick-tap-ms for combos (requires PR 1387)
 #undef COMBO_HOOK
-#define COMBO_HOOK global-quick-tap-ms = <55>;
+#define COMBO_HOOK global-quick-tap-ms = <75>;
 
 #define COMBO_TERM_TURBO 15
 #define COMBO_TERM_FAST 20
 #define COMBO_TERM_SLOW 35
 #define COMBO_TERM_SLOWER 40
+
+// make homerow combos tap-only (so mods can be chorded correctly)
+#define HRC_LPAR   &hmr        LA(LCTRL) LPAR
+#define HRC_RPAR   &hmr        LS(LCTRL) RPAR
+#define HRC_MINUS  &hmr        RS(LCTRL) LPAR
+#define HRC_UNDER  &hmr        LA(LCTRL) RPAR
+
 
 /* Punctuation (horizontal left hand) */
 /* ZMK_COMBO(esc,   &kp ESC,       LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST) */
@@ -27,17 +34,17 @@
 
 /* Brackets (horizontal right hand) */
 ZMK_COMBO(lbrc,  &kp LBRC,      LT2 LT3,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(lpar,  &kp LPAR,      LM2 LM3,     DEF, COMBO_TERM_FAST)
+ZMK_COMBO(lpar,  HRC_LPAR,      LM2 LM3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(lbrk,  &kp LBKT,      LB2 LB3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(rbrc,  &kp RBRC,      LT1 LT2,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(rpar,  &kp RPAR,      LM1 LM2,     DEF, COMBO_TERM_FAST)
+ZMK_COMBO(rpar,  HRC_RPAR,      LM1 LM2,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(rbrk,  &kp RBKT,      LB1 LB2,     DEF, COMBO_TERM_SLOWER)
 
 ZMK_COMBO(lt,    &kp LT,        RT1 RT2,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(minus, &kp MINUS,     RM1 RM2,     DEF, COMBO_TERM_FAST)
+ZMK_COMBO(minus, HRC_MINUS,     RM1 RM2,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(equal, &kp EQUAL,     RB1 RB2,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(gt,    &kp GT,        RT2 RT3,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(under, &kp UNDER,     RM2 RM3,     DEF, COMBO_TERM_FAST)
+ZMK_COMBO(under, HRC_UNDER,     RM2 RM3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(amps,  &kp AMPS,      RB2 RB3,     DEF, COMBO_TERM_SLOW)
 
 ZMK_COMBO(star,  &kp STAR,      RT1 RT3,     DEF, COMBO_TERM_SLOW)
