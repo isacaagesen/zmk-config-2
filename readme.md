@@ -4,7 +4,11 @@ This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configur
 It consists of a 34-keys base layout that is re-used for various boards, including my
 Corneish Zen and an Advantage 360 pro.
 
-## *Key* features
+This branch is updated for the latest ZMK using Zephyr 3.2. A legacy version
+compatible with Zephyr 3.0 is available
+[here](https://github.com/urob/zmk-config/tree/main-zephyr-3.0).
+
+## Highlights
 
 - clean keymap + unicode setup using helper macros from
   [zmk-nodefree-config](https://github.com/urob/zmk-nodefree-config)
@@ -13,21 +17,14 @@ Corneish Zen and an Advantage 360 pro.
   larger boards by padding it via a modular structure of "extra keys"
 - ["timer-less" homerow mods](#timeless-homerow-mods) 
 - combos replacing the symbol layer
-- a smart-layer implementation for ZMK that automatically toggles the numbers
-  layer
-- long-pressing the arrow-cluster yields home, end, begin/end of document, and
-  fwd/bwd-delete words
-- sticky shift on right thumb, double-tap (or shift + tap)[^1] activates
-  caps-word
-- <kbd>shift</kbd> + <kbd>,</kbd> morphs into <kbd>;</kbd>  and
-  <kbd>shift</kbd> + <kbd>.</kbd> morphs into <kbd>;</kbd> (freeing up the
-  right pinky for <kbd>? / !</kbd>)
-- <kbd>shift</kbd> + <kbd>ctrl</kbd> + <kbd>,</kbd> morphs into <kbd><</kbd>
-  and <kbd>shift</kbd> + <kbd>ctrl</kbd> + <kbd>.</kbd> morphs into
-  <kbd>></kbd>
+- smart numbers and smart mouse layers that automatically toggle off when done
+- sticky shift on right thumb, double-tap (or shift + tap)[^1] activates caps-word
+- arrow-cluster doubles as <kbd>home</kbd>, <kbd>end</kbd>, <kbd>begin/end of
+  document</kbd> on long-press
+- more intuitive shift-actions: <kbd>, ;</kbd>, <kbd>. :</kbd> and <kbd>? !</kbd>
 - <kbd>shift</kbd> + <kbd>space</kbd> morphs into <kbd>dot</kbd> →
   <kbd>space</kbd> → <kbd>sticky-shift</kbd>
-- "Greek" layer for mathematical typesetting (activated via sticky-layer combo)
+- "Greek" layer for mathematical typesetting (activated as sticky-layer via a combo)
 - modified Github Actions workflow that recognizes git-submodules
 - automated
   [build-scripts](https://github.com/urob/zmk-config/tree/main/scripts#readme)
@@ -94,10 +91,10 @@ This is great but there are still a few rough edges:
     flavour only kicks in when another key is pressed, this also requires
     waiting past `tapping-term-ms`.
 * Finally, it is worth noting that this setup works best in combination with a
-  dedicated shift for capitalization during normal typing (I am a big fan of
-  sticky-shift on a home-thumb). This is because shifting alphas is the
-  one scenario where pressing a mod may conflict with `global-quick-tap`, which
-  may result in false negatives when typing fast.
+  dedicated shift for capitalization during normal typing (I like sticky-shift
+  on a home-thumb). This is because shifting alphas is the one scenario where
+  pressing a mod may conflict with `global-quick-tap`, which may result in
+  false negatives when typing fast.
 
 Here's my configuration (I use a bunch of [helper
 macros](https://github.com/urob/zmk-nodefree-config) to simplify the syntax, but they
@@ -147,52 +144,94 @@ PRs, you might find this [ZMK-centric introduction to
 Git](https://gist.github.com/urob/68a1e206b2356a01b876ed02d3f542c7) helpful.
 
 
-## Combo setup
+## Using combos instead of a symbol layer
 
-My layout makes heavy use of combos. Thanks to `global-quick-tap` for combos
-(introduced in above mentioned PR #1387), combo misfires are rare, even when
-rolling keys. Most of my combos are bind to symbols, replacing the usual
-symbols layer seen on many sub-40 keyboard layouts. The combos are designed so
-as to put the most used symbols in easy-to-access locations while also making
-them easy to remember. Specifically:
+I am a big fan of combos for all sort of things. In terms of comfort, I much prefer them
+over accessing layers that involve lateral thumb movements to be activated, especially
+when switching between different layers in rapid succession.
+
+One common concern about overloading the layout with combos is that they lead to
+misfires. Fortunately, the above-mentioned PR #1387, also adds a `global-quick-tap` option 
+for combos, which in my experience all but completely eliminates the problem -- even
+when rolling keys on the home row!
+
+My combo layout aims to place the most used symbols in easy-to-access
+locations while also making them easy to remember. Specifically:
 
 - the top vertical-combo row matches the symbols on a standard numbers row
   (except `+` and `&` being swapped)
 - the bottom vertical-combo row is symmetric to the top row (subscript `_`
   aligns with superscript `^`; minus `-` aligns with `+`; division `/` aligns
   with multiplication `*`; logical-or `|` aligns with logical-and `&`)
-- parenthesis, braces, brackets are set up symmetrically as horizontal combos
-- cut (on `X + D`), copy, and paste are on the left side for one-handed mouse
-  use
-- `L + Y` activates Greek layer for the next key press, `L + U + Y` activates the shifted
-  Greek layer the next key
-- `tap`, `esc`, `enter` are on horizontal combos
+- parenthesis, braces, brackets are set up symmetrically as horizontal combos with `<`,
+  `>`, `{` and `}` being accessed from the Navigation layer
+- left-hand side combos for `tap`, `esc`, `enter`, `cut` (on <kbd>X</kbd> + <kbd>D</kbd>),
+  `copy` and `paste` that go well with right-handed mouse usage
+- <kbd>L</kbd> + <kbd>Y</kbd> switches to the Greek layer for a single key
+  press, <kbd>L</kbd> + <kbd>U</kbd> + <kbd>Y</kbd> activates one-shot shift in
+  addition
+- <kbd>W</kbd> + <kbd>P</kbd> activates the smart mouse layer
 
-## Experimental changes
+## Smart layers and other gimmicks
 
-- I recently reduced my core layout to 34 keys. Backspace and Delete are now on
-  my Navigation-layer. To make room for these keys, I have added hold-taps to
-  the arrow cluster, which now double as Home/End and Beginning/End of
-  document. I really like the new navigation cluster and will likely keep it in
-  one way or another
-- Inspired by Jonas Hietala's
-  [Numword](https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#where-are-the-digits)
-  for QMK, I implemented my own version of [Smart-layers for
-    ZMK](https://github.com/zmkfirmware/zmk/pull/1451). It is triggered via a
-    single tap on my Num-key (holding the key will activate the num layer as
-    usual without triggering Numword). Similar to Capsword, Numword continues
-    to be activated as long as I type numbers, and deactivates automatically on
-    any other keypress. I found that I use Numword for most of my numbers
-    typing. For single digits, it effectively is a sticky-layer, but
-    importantly I can also use it for multiple digits. The only case where it
-    doesn't deactivate automatically is where immediately after a digit I would
-    type any of the letters on which my numpad is located (WFPRSTXCD), which is
-    rare, but does happen. For these cases I have a CANCEL key on my Nav layer
-    that cancels both Numword and Capsword.
-- Since the switch to 34 keys, I freed up the tap-position on my left-most
-  thumb key. For now I added a secondary Bspc, but I am still searching for a
-  better use. (I tried adding Repeat here but I found that it doesn't work well
-  adjacent to space, which requires to much lateral thumb-movements)
+##### Numword
+
+Inspired by Jonas Hietala's
+[Numword](https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#where-are-the-digits)
+for QMK, I implemented my own version of [Smart-layers for
+ZMK](https://github.com/zmkfirmware/zmk/pull/1451). It is triggered via a
+single tap on "Smart-Num". Numword continues to be activated as long as I
+type numbers, and deactivates automatically on any other keypress (holding it activates 
+a non-sticky num layer).
+
+After using Numword for about 6 months now, I have been overall very happy with it. When
+typing single digits, it effectively is a sticky-layer but with the added advantage that 
+I can also use it to type multiple digits. 
+
+The main downside is that if a sequence of numbers is *immediately* followed by any of the
+letters on which my numpad is located (WFPRSTXCD), then the automatic deactivation won't
+work. But this is rare -- most number sequences are terminated by `space`, `return` or some form
+of punctuation/delimination. To deal with the rare cases where they aren't, there is a 
+`CANCEL` key on the navigation-layer that deactivates Numword, Capsword and Smart-mouse. 
+(It also toggles off when pressing `Numword` again, but I find it cognitively easier to
+have a dedicated "off-switch" than keeping track of which modes are currently active.)
+
+
+##### Smart-Mouse
+
+Similarly to Numword, I have a smart-mouse layer (activated by comboing
+<kbd>W</kbd> + <kbd>P</kbd>), which replaces the navigation cluster with
+scroll and mouse-movements, and replaces the right thumbs with mouse buttons.
+Pressing any other key automatically deactivates the layer.
+
+##### Capsword
+
+My right thumb triggers three variations of shift: Tapping yields
+sticky-shift (used to capitalize alphas), holding activates a regular shift, and
+double-tapping (or equivalently shift + tap) activates ZMK's Caps-word behavior.
+
+One minor technical detail: While it would be possible to implement the double-tap functionality
+as a tap-dance, this would add a delay when using single taps. To avoid the delays, I 
+instead implemented the double-tap functionality as a mod-morph.
+
+##### Multi-purpose Navigation cluster
+
+To economize on keys, I am using hold-taps on my navigation cluster, which yield `home`, `end`,
+`begin/end of document`, and `delete word forward/backward` on long-presses.
+
+##### Swapper
+
+I am using [Nick Conway](https://github.com/nickconway)'s fantastic
+[tri-state](https://github.com/zmkfirmware/zmk/pull/1366) behavior for a
+one-handed Alt-Tab switcher (`PWin` and `NWin`).
+
+##### Repeat
+
+I recently switched to 25g-chocs on one of my keyboards. I already was very happy with
+my combos prior to that (even with heavy-ish MX-switches). But with the light chocs, I
+find that I can now even use them for regular typing. While I haven't yet tried
+placing alphas on combos, I am currently experimenting with a `repeat` combo on
+my home row that I use to reduce SFUs when typing double-letter words.
 
 ## Issues and workarounds
 
@@ -202,22 +241,32 @@ any functionality (to the contrary, I found that ZMK supports many features
 natively that would require complex user-space implementations in QMK). Below
 are a few remaining issues:
 
-- ZMK does not yet support tap-only combos
-  ([#544](https://github.com/zmkfirmware/zmk/issues/544)). Workaround: pause
-  briefly when chording multiple HRMs together on positions that otherwise would trigger
-  a combo.
-- OS sleep is not yet implemented ([#1077](https://github.com/zmkfirmware/zmk/issues/1077)).
-  Workaround: use sleep-macro instead.
-- `&bootloader` doesn't work with Planck_rev6
-  ([#1086](https://github.com/zmkfirmware/zmk/issues/1086)). Workaround: Manually press
-  reset-button.
+- ZMK does not yet support "tap-only" combos
+  ([#544](https://github.com/zmkfirmware/zmk/issues/544)), requiring a brief
+  pause when wanting to chord HRMs that overlap with combo positions. As a
+  workaround, I implemented all homerow combos as homerow-mod-combos. This is
+  good enough for day-to-day, but does not address all edge cases (eg
+  dynamically adding/removing mods doesn't work well). Having a native solution
+  akin to QMK's "COMBO_MUST_TAP" property would be fantastic.
+- Another item on my wishlist are adaptive keys
+  ([#1624](https://github.com/zmkfirmware/zmk/issues/1624)). This would open
+  the door for things like <kbd>space</kbd><kbd>space</kbd> becoming
+  <kbd>.</kbd><kbd>space</kbd><kbd>sticky-shift</kbd>. (Using tap-dance isn't
+  really an option here due to the delay it adds)
+- A minor thing is that ZMK doesn't yet support any keys on the
+  desktop-user-page; e.g., OS sleep
+  ([#1077](https://github.com/zmkfirmware/zmk/issues/1077),
+  [#1535](https://github.com/zmkfirmware/zmk/issues/1535))
+- Very minor: `&bootloader` doesn't work with stm32 boards like the Planck
+  ([#1086](https://github.com/zmkfirmware/zmk/issues/1086))
 
 [^1]: Really what's happening is that `Shift` + my right home-thumb morph into
   caps-word. This gives me two separate ways of activating it: (1) Holding the
   homerow-mod shift on my left index-finger and then pressing my right home-thumb, which
   is my new preferred way. Or, (2) double-tapping the right home-thumb, which also works
   because the first tap yields sticky-shift, activating the mod-morph upon the second
-  tap.
+  tap. But even when only activating via double-tapping, this implementation is advantageous
+  compared to using tap-dance as it does not create any delay when single-tapping the key.
 
 [^2]: I call it "timer-less", because the large tapping-term makes the behavior
   insensitive to the precise timings. One may say that there is still the
