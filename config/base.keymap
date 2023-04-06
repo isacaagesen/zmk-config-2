@@ -199,14 +199,6 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-
-ZMK_BEHAVIOR(lt_esc, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&kp ESC>;
-)
-
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(lt_spc, hold_tap,
     flavor = "balanced";
@@ -274,7 +266,7 @@ ZMK_LAYER(base,
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     X_LB     &kp Z         &kp X         &kp C         &kp D         &kp V           X_MB     &kp K         &kp H         &comma_morph  &dot_morph    &qexcl          X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    &lt_esc SYS                                        &lt_spc NAV 0 &smart_shft     X_MH     &kp ENTER     &bs_del                                                   X_RH
+    &lt SYS ESC                                        &lt_spc NAV 0 &smart_shft     X_MH     &kp ENTER     &bs_del                                                   X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 )
 
