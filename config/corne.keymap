@@ -12,6 +12,11 @@
 #define X_RM  &none
 #define X_RB  &none
 
+#define X_MT  &none
+#define X_MM  &none
+#define X_MB  &none
+#define X_MH  &none
+
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
 
