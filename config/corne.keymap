@@ -4,18 +4,15 @@
 /* map Zen's extra keys */
 #define X_LH  &lt SYS ESC  // thumb row, left
 #define X_RH  SMART_NUM    // thumb row, right
-#define X_LT  &none
-#define X_LM  &none
-#define X_LB  &none
+#
+#define X_LT  &trans
+#define X_LM  &trans
+#define X_LB  &trans
 
-#define X_RT  &none
-#define X_RM  &none
-#define X_RB  &none
+#define X_RT  &trans
+#define X_RM  &trans
+#define X_RB  &trans
 
-#define X_MT  &none
-#define X_MM  &none
-#define X_MB  &none
-#define X_MH  &none
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
