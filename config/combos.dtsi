@@ -11,8 +11,7 @@
 #undef COMBO_HOOK
 #define COMBO_HOOK global-quick-tap-ms = <100>;
 
-#define COMBO_TERM_TURBO 15
-#define COMBO_TERM_FAST 20
+#define COMBO_TERM_FAST 25
 #define COMBO_TERM_SLOW 35
 #define COMBO_TERM_SLOWER 40
 
@@ -26,7 +25,6 @@
 #define HRC_DLLR   &hmr        LA(LCTRL) DLLR
 #define HRC_CARET  &hmr        LA(LCTRL) CARET
 
-
 /* Punctuation (horizontal left hand) */
 /* ZMK_COMBO(esc,   &kp ESC,       LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST) */
 /* ZMK_COMBO(tab,   &kp TAB,       LT2 LT1,     DEF NAV NUM, COMBO_TERM_FAST) */
@@ -37,6 +35,7 @@
 /* ZMK_COMBO(paste, &kp LS(INS),   LB2 LB1,     DEF NAV NUM, COMBO_TERM_FAST) */
 
 /* Brackets (horizontal right hand) */
+
 ZMK_COMBO(lbrc,  &kp LBRC,      LT2 LT3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(lpar,  HRC_LPAR,      LM2 LM3,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(lbrk,  &kp LBKT,      LB2 LB3,     DEF, COMBO_TERM_FAST)
