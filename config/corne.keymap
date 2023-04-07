@@ -9,8 +9,8 @@
 #define X_LB  &trans
 
 #define X_RT  &trans
-#define X_RM  &trans
-#define X_RB  &trans
+#define X_RM  &smart_mouse
+#define X_RB  &key_repeat
 
 
 /* activate bluetooth */
