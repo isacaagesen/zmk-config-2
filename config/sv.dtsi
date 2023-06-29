@@ -5,6 +5,7 @@
 
 / {
 	behaviors {
+    // å for both windows and mac
     sv_ao: sv_ao {
         compatible = "zmk,behavior-macro";
         label = "sv one";
@@ -27,6 +28,32 @@
           , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N7>
           , <&macro_release &kp LALT>;
     };
+
+    sv_ao_osx: sv_ao_osx {
+        compatible = "zmk,behavior-macro";
+        label = "sv one";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp A>
+          , <&macro_release &kp LALT>;
+    };
+    sv_ao_osx_shift: sv_ao_osx_shift {
+        compatible = "zmk,behavior-macro";
+        label = "sv one shift";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT &kp LSHFT>
+          , <&macro_tap     &kp A>
+          , <&macro_release &kp LALT &kp LSHFT>;
+    };
+    // ------------------------------
+
+    // ä for both windows and mac
     sv_ae: sv_ae {
         compatible = "zmk,behavior-macro";
         label = "sv two";
@@ -49,6 +76,36 @@
           , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N6>
           , <&macro_release &kp LALT>;
     };
+    sv_ae_osx: sv_ae_osx {
+        compatible = "zmk,behavior-macro";
+        label = "sv two";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp U>
+          , <&macro_release &kp LALT>
+          , <&macro_tap     &kp A>;
+    };
+    sv_ae_osx_shift: sv_ae_osx_shift {
+        compatible = "zmk,behavior-macro";
+        label = "sv two shift";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp U>
+          , <&macro_release &kp LALT>
+          , <&macro_tap     &kp A>
+          , <&macro_release &kp LSHFT>;
+          
+          
+    };
+    // ------------------------------
+
+    // ö for both windows and mac
     sv_oe: sv_oe {
         compatible = "zmk,behavior-macro";
         label = "sv three";
@@ -71,6 +128,32 @@
           , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N4>
           , <&macro_release &kp LALT>;
     };
+    sv_oe_osx: sv_oe_osx {
+        compatible = "zmk,behavior-macro";
+        label = "sv three";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp U>
+          , <&macro_release &kp LALT>
+          , <&macro_tap     &kp O>;
+    };
+    sv_oe_osx_shift: sv_oe_osx_shift {
+        compatible = "zmk,behavior-macro";
+        label = "sv three shift";
+        #binding-cells = <0>;
+        wait-ms = <U_WAIT_MS>;
+        tap-ms = <U_TAP_MS>;
+        bindings
+          = <&macro_press   &kp LALT>
+          , <&macro_tap     &kp U>
+          , <&macro_release &kp LALT>
+          , <&macro_tap     &kp O>
+          , <&macro_release &kp LSHFT>;
+    };
+    // ------------------------------
     sv_ao_morph: sv_ao_morph {
         compatible = "zmk,behavior-mod-morph";
         label = "sv ao morph";
@@ -92,5 +175,28 @@
         mods = <(MOD_LSFT|MOD_RSFT)>;
         bindings = <&sv_oe>, <&sv_oe_shift>;
     };
+    sv_ao_osx_morph: sv_ao_osx_morph {
+        compatible = "zmk,behavior-mod-morph";
+        label = "sv ao morph";
+        #binding-cells = <0>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&sv_ao_osx>, <&sv_ao_osx_shift>;
+    };
+    sv_ae_osx_morph: sv_ae_osx_morph {
+        compatible = "zmk,behavior-mod-morph";
+        label = "sv ae morph";
+        #binding-cells = <0>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&sv_ae_osx>, <&sv_ae_osx_shift>;
+    };
+    sv_oe_osx_morph: sv_oe_osx_morph {
+        compatible = "zmk,behavior-mod-morph";
+        label = "sv oe morph";
+        #binding-cells = <0>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&sv_oe_osx>, <&sv_oe_osx_shift>;
+    };
+
+
   };
 };
